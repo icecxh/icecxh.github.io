@@ -11,7 +11,7 @@ this.addEventListener('install', function(event) {
         'app.js',
         'image-list.js',
         'star-wars-logo.jpg',
-        'gallery/',
+        // 'gallery/',
         'gallery/bountyHunters.jpg',
         'gallery/myLittleVader.jpg',
         'gallery/snowTroopers.jpg'

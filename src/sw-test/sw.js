@@ -41,3 +41,38 @@ this.addEventListener('fetch', function(event) {
     })
   );
 });
+
+// 如果你的 service worker 已经被安装，但是刷新页面时有一个新版本的可用，新版的 service worker 会在后台安装，但是还没激活。当不再有任何已加载的页面在使用旧版的 service worker 的时候，新版本才会激活
+// self.addEventListener('install', function(event) {
+//   event.waitUntil(
+//     caches.open('v2').then(function(cache) {
+//       return cache.addAll([
+//         '/sw-test/',
+//         '/sw-test/index.html',
+//         '/sw-test/style.css',
+//         '/sw-test/app.js',
+//         '/sw-test/image-list.js',
+        
+//         …
+
+//         // include other new resources for the new version...
+//       ]);
+//     })
+//   );
+// });
+
+// onactivate 主要用途是清理先前版本的service worker 脚本中使用的资源
+// 清除缓存
+self.addEventListener('activate', function(event) {
+  var cacheWhitelist = ['v2'];
+
+  event.waitUntil(
+    caches.keys().then(function(keyList) {
+      return Promise.all(keyList.map(function(key) {
+        if (cacheWhitelist.indexOf(key) === -1) {
+          return caches.delete(key);
+        }
+      }));
+    })
+  );
+});

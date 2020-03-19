@@ -5,16 +5,16 @@ this.addEventListener('install', function(event) {
     // cache使我们可以存储网络响应发来的资源，并且根据它们的请求来生成key
     caches.open('v1').then(function(cache) {
       return cache.addAll([
-        'src/sw-test/',
-        'src/sw-test/index.html',
-        'src/sw-test/style.css',
-        'src/sw-test/app.js',
-        'src/sw-test/image-list.js',
-        'src/sw-test/star-wars-logo.jpg',
-        'src/sw-test/gallery/',
-        'src/sw-test/gallery/bountyHunters.jpg',
-        'src/sw-test/gallery/myLittleVader.jpg',
-        'src/sw-test/gallery/snowTroopers.jpg'
+        '/',
+        'index.html',
+        'style.css',
+        'app.js',
+        'image-list.js',
+        'star-wars-logo.jpg',
+        'gallery/',
+        'gallery/bountyHunters.jpg',
+        'gallery/myLittleVader.jpg',
+        'gallery/snowTroopers.jpg'
       ]);
     })
   );

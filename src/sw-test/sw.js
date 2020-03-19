@@ -64,7 +64,7 @@ this.addEventListener('fetch', function(event) {
 // onactivate 主要用途是清理先前版本的service worker 脚本中使用的资源
 // 清除缓存
 self.addEventListener('activate', function(event) {
-  var cacheWhitelist = ['v2'];
+  var cacheWhitelist = ['v1'];
 
   event.waitUntil(
     caches.keys().then(function(keyList) {

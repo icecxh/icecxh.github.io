@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>web workers 实验</title>
+</head>
+
+<body>
+  <h3>关键信息</h3>
+  <p>workers分为专用worker（仅仅能被首次生成它的脚本使用），共享worker（可以同时被多个脚本使用）</p>
+  <p>在worker内，不能直接操作DOM节点</p>
+  <p>workers和主线程间的数据传递通过这样的消息机制进行</p>
+  <p>在同源的父页面中，workers可以依次生成新的workers；并且可以使用XMLHttpRequest 进行网络I/O</p>
+  <br>
+  <input type="text" id="first" placeholder="first">
+  <input type="text" id="second" placeholder="second">
+</body>
+<script src="./main.js"></script>
+<script>
+
+</script>
+
+</html>
